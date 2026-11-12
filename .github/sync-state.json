@@ -1,44 +1,74 @@
 {
-  "history_import_complete": false,
+  "history_import_complete": true,
   "next_index": {
     "3sum": 3,
-    "binary-search": 1,
+    "4sum": 3,
+    "baseball-game": 3,
+    "best-time-to-buy-and-sell-stock": 3,
+    "binary-search": 2,
     "car-fleet": 1,
     "concatenation-of-array": 1,
     "container-with-most-water": 1,
     "contains-duplicate": 12,
+    "contains-duplicate-ii": 3,
+    "copy-list-with-random-pointer": 2,
     "daily-temperatures": 1,
     "design-hashmap": 2,
     "design-hashset": 4,
-    "find-minimum-in-rotated-sorted-array": 1,
+    "diameter-of-binary-tree": 1,
+    "find-closest-number-to-zero": 3,
+    "find-k-closest-elements": 3,
+    "find-minimum-in-rotated-sorted-array": 4,
+    "find-the-duplicate-number": 3,
     "find-the-index-of-the-first-occurrence-in-a-string": 3,
-    "group-anagrams": 7,
+    "group-anagrams": 8,
     "guess-number-higher-or-lower": 1,
     "happy-number": 1,
+    "implement-stack-using-queues": 1,
     "insert-delete-getrandom-o1": 1,
     "intersection-of-two-arrays": 1,
+    "invert-binary-tree": 1,
+    "koko-eating-bananas": 4,
+    "linked-list-cycle": 4,
     "longest-common-prefix": 2,
     "longest-consecutive-sequence": 3,
+    "longest-repeating-character-replacement": 3,
+    "longest-substring-without-repeating-characters": 4,
     "majority-element": 1,
     "majority-element-ii": 1,
+    "maximum-depth-of-binary-tree": 1,
+    "merge-sorted-array": 1,
+    "merge-strings-alternately": 2,
     "middle-of-the-linked-list": 1,
+    "minimum-positive-sum-subarray": 1,
+    "minimum-size-subarray-sum": 2,
+    "permutation-in-string": 7,
     "product-of-array-except-self": 3,
+    "remove-duplicates-from-sorted-array": 3,
     "remove-duplicates-from-sorted-array-ii": 1,
     "remove-element": 2,
     "remove-linked-list-elements": 1,
-    "reverse-linked-list": 1,
+    "remove-nth-node-from-end-of-list": 1,
+    "reorder-list": 1,
+    "reverse-linked-list": 3,
+    "reverse-string": 1,
     "reverse-words-in-a-string": 1,
-    "search-a-2d-matrix": 3,
+    "rotate-array": 1,
+    "search-a-2d-matrix": 7,
+    "search-in-rotated-sorted-array": 1,
     "search-insert-position": 1,
     "sqrtx": 1,
-    "top-k-frequent-elements": 4,
-    "two-sum": 5,
+    "subtree-of-another-tree": 2,
+    "top-k-frequent-elements": 6,
+    "two-sum": 6,
     "two-sum-ii-input-array-is-sorted": 1,
     "valid-anagram": 5,
     "valid-palindrome": 2,
+    "valid-palindrome-ii": 1,
+    "valid-parentheses": 1,
     "valid-sudoku": 2
   },
-  "remaining": 81,
+  "remaining": 0,
   "submissions": {
     "1189423307": {
       "language": "python3",
@@ -339,6 +369,411 @@
       "language": "python3",
       "path": "majority-element-ii/submission-0.py",
       "timestamp": 1740512194
+    },
+    "1555347430": {
+      "language": "python3",
+      "path": "reverse-string/submission-0.py",
+      "timestamp": 1740512650
+    },
+    "1555356087": {
+      "language": "python3",
+      "path": "valid-palindrome-ii/submission-0.py",
+      "timestamp": 1740513309
+    },
+    "1555361279": {
+      "language": "python3",
+      "path": "merge-strings-alternately/submission-0.py",
+      "timestamp": 1740513704
+    },
+    "1555440950": {
+      "language": "python3",
+      "path": "merge-strings-alternately/submission-1.py",
+      "timestamp": 1740521411
+    },
+    "1556450761": {
+      "language": "python3",
+      "path": "remove-duplicates-from-sorted-array/submission-0.py",
+      "timestamp": 1740598851
+    },
+    "1556454315": {
+      "language": "python3",
+      "path": "remove-duplicates-from-sorted-array/submission-1.py",
+      "timestamp": 1740599124
+    },
+    "1556460489": {
+      "language": "python3",
+      "path": "remove-duplicates-from-sorted-array/submission-2.py",
+      "timestamp": 1740599631
+    },
+    "1556545183": {
+      "language": "python3",
+      "path": "rotate-array/submission-0.py",
+      "timestamp": 1740608400
+    },
+    "1556557665": {
+      "language": "python3",
+      "path": "merge-sorted-array/submission-0.py",
+      "timestamp": 1740609987
+    },
+    "1556568657": {
+      "language": "python3",
+      "path": "4sum/submission-0.py",
+      "timestamp": 1740611393
+    },
+    "1556568800": {
+      "language": "python3",
+      "path": "4sum/submission-1.py",
+      "timestamp": 1740611412
+    },
+    "1556569830": {
+      "language": "python3",
+      "path": "4sum/submission-2.py",
+      "timestamp": 1740611545
+    },
+    "1556575143": {
+      "language": "python3",
+      "path": "longest-substring-without-repeating-characters/submission-0.py",
+      "timestamp": 1740612241
+    },
+    "1556622405": {
+      "language": "python3",
+      "path": "contains-duplicate-ii/submission-0.py",
+      "timestamp": 1740618326
+    },
+    "1556702149": {
+      "language": "python3",
+      "path": "longest-substring-without-repeating-characters/submission-1.py",
+      "timestamp": 1740626995
+    },
+    "1556723932": {
+      "language": "python3",
+      "path": "best-time-to-buy-and-sell-stock/submission-0.py",
+      "timestamp": 1740628856
+    },
+    "1560554108": {
+      "language": "python3",
+      "path": "contains-duplicate-ii/submission-1.py",
+      "timestamp": 1740934414
+    },
+    "1560556090": {
+      "language": "python3",
+      "path": "contains-duplicate-ii/submission-2.py",
+      "timestamp": 1740934540
+    },
+    "1560622966": {
+      "language": "python3",
+      "path": "longest-repeating-character-replacement/submission-0.py",
+      "timestamp": 1740938580
+    },
+    "1560767841": {
+      "language": "python3",
+      "path": "longest-substring-without-repeating-characters/submission-2.py",
+      "timestamp": 1740949910
+    },
+    "1560780622": {
+      "language": "python3",
+      "path": "permutation-in-string/submission-0.py",
+      "timestamp": 1740951271
+    },
+    "1560786628": {
+      "language": "python3",
+      "path": "permutation-in-string/submission-1.py",
+      "timestamp": 1740951931
+    },
+    "1560788453": {
+      "language": "python3",
+      "path": "permutation-in-string/submission-2.py",
+      "timestamp": 1740952131
+    },
+    "1560790514": {
+      "language": "python3",
+      "path": "permutation-in-string/submission-3.py",
+      "timestamp": 1740952358
+    },
+    "1560882993": {
+      "language": "python3",
+      "path": "permutation-in-string/submission-4.py",
+      "timestamp": 1740963447
+    },
+    "1560883611": {
+      "language": "python3",
+      "path": "permutation-in-string/submission-5.py",
+      "timestamp": 1740963514
+    },
+    "1560886546": {
+      "language": "python3",
+      "path": "permutation-in-string/submission-6.py",
+      "timestamp": 1740963836
+    },
+    "1561039758": {
+      "language": "python3",
+      "path": "minimum-size-subarray-sum/submission-0.py",
+      "timestamp": 1740977706
+    },
+    "1561054665": {
+      "language": "python3",
+      "path": "find-k-closest-elements/submission-0.py",
+      "timestamp": 1740978679
+    },
+    "1561057294": {
+      "language": "python3",
+      "path": "find-k-closest-elements/submission-1.py",
+      "timestamp": 1740978846
+    },
+    "1561058546": {
+      "language": "python3",
+      "path": "find-k-closest-elements/submission-2.py",
+      "timestamp": 1740978923
+    },
+    "1561823934": {
+      "language": "python3",
+      "path": "baseball-game/submission-0.py",
+      "timestamp": 1741030414
+    },
+    "1561828268": {
+      "language": "python3",
+      "path": "baseball-game/submission-1.py",
+      "timestamp": 1741030741
+    },
+    "1561828917": {
+      "language": "python3",
+      "path": "baseball-game/submission-2.py",
+      "timestamp": 1741030788
+    },
+    "1561834543": {
+      "language": "python3",
+      "path": "implement-stack-using-queues/submission-0.py",
+      "timestamp": 1741031216
+    },
+    "1628093082": {
+      "language": "python3",
+      "path": "valid-parentheses/submission-0.py",
+      "timestamp": 1746646951
+    },
+    "1630702876": {
+      "language": "python3",
+      "path": "koko-eating-bananas/submission-0.py",
+      "timestamp": 1746937586
+    },
+    "1630705221": {
+      "language": "python3",
+      "path": "koko-eating-bananas/submission-1.py",
+      "timestamp": 1746937814
+    },
+    "1631391050": {
+      "language": "python3",
+      "path": "find-minimum-in-rotated-sorted-array/submission-1.py",
+      "timestamp": 1746999532
+    },
+    "1631424954": {
+      "language": "python3",
+      "path": "find-minimum-in-rotated-sorted-array/submission-2.py",
+      "timestamp": 1747005108
+    },
+    "1632047078": {
+      "language": "python3",
+      "path": "search-in-rotated-sorted-array/submission-0.py",
+      "timestamp": 1747066764
+    },
+    "1632249320": {
+      "language": "python3",
+      "path": "best-time-to-buy-and-sell-stock/submission-1.py",
+      "timestamp": 1747082050
+    },
+    "1632947752": {
+      "language": "python3",
+      "path": "minimum-size-subarray-sum/submission-1.py",
+      "timestamp": 1747150714
+    },
+    "1633026882": {
+      "language": "python3",
+      "path": "minimum-positive-sum-subarray/submission-0.py",
+      "timestamp": 1747155860
+    },
+    "1633120368": {
+      "language": "python3",
+      "path": "longest-substring-without-repeating-characters/submission-3.py",
+      "timestamp": 1747161553
+    },
+    "1635734474": {
+      "language": "python3",
+      "path": "longest-repeating-character-replacement/submission-1.py",
+      "timestamp": 1747415335
+    },
+    "1635740824": {
+      "language": "python3",
+      "path": "best-time-to-buy-and-sell-stock/submission-2.py",
+      "timestamp": 1747415789
+    },
+    "1635749749": {
+      "language": "python3",
+      "path": "longest-repeating-character-replacement/submission-2.py",
+      "timestamp": 1747416418
+    },
+    "1635852560": {
+      "language": "python3",
+      "path": "binary-search/submission-1.py",
+      "timestamp": 1747424699
+    },
+    "1635853698": {
+      "language": "python3",
+      "path": "search-a-2d-matrix/submission-3.py",
+      "timestamp": 1747424823
+    },
+    "1635863405": {
+      "language": "python3",
+      "path": "search-a-2d-matrix/submission-4.py",
+      "timestamp": 1747425926
+    },
+    "1635863531": {
+      "language": "python3",
+      "path": "search-a-2d-matrix/submission-5.py",
+      "timestamp": 1747425939
+    },
+    "1635886330": {
+      "language": "python3",
+      "path": "koko-eating-bananas/submission-2.py",
+      "timestamp": 1747428813
+    },
+    "1638420821": {
+      "language": "python3",
+      "path": "search-a-2d-matrix/submission-6.py",
+      "timestamp": 1747670058
+    },
+    "1638432399": {
+      "language": "python3",
+      "path": "koko-eating-bananas/submission-3.py",
+      "timestamp": 1747670783
+    },
+    "1638440672": {
+      "language": "python3",
+      "path": "find-minimum-in-rotated-sorted-array/submission-3.py",
+      "timestamp": 1747671292
+    },
+    "1688697222": {
+      "language": "python3",
+      "path": "reverse-linked-list/submission-1.py",
+      "timestamp": 1751823605
+    },
+    "1688704095": {
+      "language": "python3",
+      "path": "reverse-linked-list/submission-2.py",
+      "timestamp": 1751823964
+    },
+    "1688836962": {
+      "language": "python3",
+      "path": "linked-list-cycle/submission-0.py",
+      "timestamp": 1751833255
+    },
+    "1688837806": {
+      "language": "python3",
+      "path": "linked-list-cycle/submission-1.py",
+      "timestamp": 1751833339
+    },
+    "1688847327": {
+      "language": "python3",
+      "path": "linked-list-cycle/submission-2.py",
+      "timestamp": 1751834308
+    },
+    "1688847779": {
+      "language": "python3",
+      "path": "linked-list-cycle/submission-3.py",
+      "timestamp": 1751834348
+    },
+    "1688994960": {
+      "language": "python3",
+      "path": "reorder-list/submission-0.py",
+      "timestamp": 1751854838
+    },
+    "1690292056": {
+      "language": "python3",
+      "path": "remove-nth-node-from-end-of-list/submission-0.py",
+      "timestamp": 1751948704
+    },
+    "1692430627": {
+      "language": "python3",
+      "path": "copy-list-with-random-pointer/submission-0.py",
+      "timestamp": 1752089968
+    },
+    "1692441521": {
+      "language": "python3",
+      "path": "copy-list-with-random-pointer/submission-1.py",
+      "timestamp": 1752090835
+    },
+    "1693562299": {
+      "language": "python3",
+      "path": "find-the-duplicate-number/submission-0.py",
+      "timestamp": 1752175246
+    },
+    "1693562390": {
+      "language": "python3",
+      "path": "find-the-duplicate-number/submission-1.py",
+      "timestamp": 1752175252
+    },
+    "1693575365": {
+      "language": "python3",
+      "path": "find-the-duplicate-number/submission-2.py",
+      "timestamp": 1752176218
+    },
+    "1740208235": {
+      "language": "python3",
+      "path": "invert-binary-tree/submission-0.py",
+      "timestamp": 1755561177
+    },
+    "1740209281": {
+      "language": "python3",
+      "path": "maximum-depth-of-binary-tree/submission-0.py",
+      "timestamp": 1755561343
+    },
+    "1740210519": {
+      "language": "python3",
+      "path": "diameter-of-binary-tree/submission-0.py",
+      "timestamp": 1755561543
+    },
+    "1741736689": {
+      "language": "python3",
+      "path": "subtree-of-another-tree/submission-0.py",
+      "timestamp": 1755672442
+    },
+    "1742386916": {
+      "language": "python3",
+      "path": "subtree-of-another-tree/submission-1.py",
+      "timestamp": 1755712475
+    },
+    "1758681491": {
+      "language": "python3",
+      "path": "find-closest-number-to-zero/submission-0.py",
+      "timestamp": 1756931580
+    },
+    "1758682226": {
+      "language": "python3",
+      "path": "find-closest-number-to-zero/submission-1.py",
+      "timestamp": 1756931651
+    },
+    "1758684922": {
+      "language": "python3",
+      "path": "find-closest-number-to-zero/submission-2.py",
+      "timestamp": 1756931915
+    },
+    "1758687737": {
+      "language": "python3",
+      "path": "two-sum/submission-5.py",
+      "timestamp": 1756932197
+    },
+    "1779643884": {
+      "language": "python3",
+      "path": "group-anagrams/submission-7.py",
+      "timestamp": 1758589966
+    },
+    "1779649434": {
+      "language": "python3",
+      "path": "top-k-frequent-elements/submission-4.py",
+      "timestamp": 1758590709
+    },
+    "1779650848": {
+      "language": "python3",
+      "path": "top-k-frequent-elements/submission-5.py",
+      "timestamp": 1758590894
     },
     "865443004": {
       "language": "python3",
