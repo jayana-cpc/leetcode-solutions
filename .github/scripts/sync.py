@@ -60,8 +60,28 @@ class Client:
                         time.sleep(min(10 * 2 ** attempt, 60))
                         continue
                 if error.code in (401, 403, 302):
-                    raise SyncError("LeetCode denied access. Refresh the session and CSRF secrets; "
-                                    "a hosted runner may also be blocked by LeetCode.") from None
+                    # Inspect only for fixed diagnostic markers. Never print the body:
+                    # it may contain cookies, tokens, or account information.
+                    body = error.read(131072).decode("utf-8", errors="replace").lower()
+                    context = f"HTTP {error.code} at {path.split('?')[0]}"
+                    if (error.headers.get("cf-mitigated", "").lower() == "challenge"
+                            or any(marker in body for marker in (
+                                "cf-chl-", "challenge-platform", "just a moment...",
+                                "attention required! | cloudflare"))):
+                        raise SyncError(f"{context}: LeetCode returned a browser security challenge. "
+                                        "This runner cannot complete it. Replacing session secrets "
+                                        "alone will not resolve a runner challenge.") from None
+                    if "csrf" in body and any(marker in body for marker in (
+                            "verification failed", "token missing", "token incorrect", "csrf failed")):
+                        raise SyncError(f"{context}: LeetCode rejected the CSRF check. Copy csrftoken "
+                                        "and LEETCODE_SESSION from the same signed-in browser session "
+                                        "into the two repository secrets, using only cookie values.") from None
+                    if error.code in (401, 302):
+                        raise SyncError(f"{context}: Authentication was rejected or redirected. "
+                                        "Refresh the LeetCode session secrets.") from None
+                    raise SyncError(f"{context}: Access forbidden, without a recognized CSRF or "
+                                    "browser-challenge marker. The response does not establish "
+                                    "whether this is a session problem or runner blocking.") from None
                 raise SyncError(f"LeetCode request failed (HTTP {error.code}).") from None
             except (URLError, TimeoutError):
                 if attempt == 4:

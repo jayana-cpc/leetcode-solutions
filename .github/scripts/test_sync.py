@@ -3,6 +3,9 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
+from io import BytesIO
+from urllib.error import HTTPError
 
 spec = importlib.util.spec_from_file_location("sync", Path(__file__).with_name("sync.py"))
 archive = importlib.util.module_from_spec(spec)
@@ -32,6 +35,23 @@ class FakeClient:
 
 
 class ArchiveTests(unittest.TestCase):
+    def test_http_errors_distinguish_challenge_csrf_and_auth_without_body_leaks(self):
+        cases = [
+            (403, b"<title>Just a moment...</title> SECRET", "browser security challenge"),
+            (403, b"CSRF verification failed SECRET", "rejected the CSRF check"),
+            (401, b"SECRET", "Authentication was rejected"),
+            (403, b"SECRET", "Access forbidden"),
+        ]
+        for status, body, expected in cases:
+            with self.subTest(status=status, expected=expected):
+                client = archive.Client("fake", "fake")
+                error = HTTPError("https://leetcode.com/graphql/", status, "", {}, BytesIO(body))
+                with patch.object(client.opener, "open", side_effect=error), patch.object(archive.time, "sleep"):
+                    with self.assertRaises(archive.SyncError) as result:
+                        client.request("/graphql/")
+                self.assertIn(expected, str(result.exception))
+                self.assertNotIn("SECRET", str(result.exception))
+
     def test_full_pagination_filters_rejected_and_keeps_identical_attempts(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
