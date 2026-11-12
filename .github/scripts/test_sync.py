@@ -6,6 +6,7 @@ import unittest
 from unittest.mock import patch
 from io import BytesIO
 from urllib.error import HTTPError
+from http.client import RemoteDisconnected, IncompleteRead
 
 spec = importlib.util.spec_from_file_location("sync", Path(__file__).with_name("sync.py"))
 archive = importlib.util.module_from_spec(spec)
@@ -35,6 +36,27 @@ class FakeClient:
 
 
 class ArchiveTests(unittest.TestCase):
+    def test_interrupted_connection_retries_then_returns_response(self):
+        for interruption in (RemoteDisconnected("closed"), IncompleteRead(b"partial"),
+                             ConnectionResetError("reset")):
+            with self.subTest(interruption=type(interruption).__name__):
+                client = archive.Client("fake", "fake")
+                response = unittest.mock.MagicMock()
+                response.__enter__.return_value = BytesIO(b'{"data": {"ok": true}}')
+                with patch.object(client.opener, "open", side_effect=[interruption, response]) as request, \
+                        patch.object(archive.time, "sleep"):
+                    self.assertEqual(client.request("/graphql/", {"query": "test"}),
+                                     {"data": {"ok": True}})
+                self.assertEqual(request.call_count, 2)
+
+    def test_repeated_disconnects_stop_after_five_attempts(self):
+        client = archive.Client("fake", "fake")
+        with patch.object(client.opener, "open", side_effect=RemoteDisconnected("closed")) as request, \
+                patch.object(archive.time, "sleep"):
+            with self.assertRaisesRegex(archive.SyncError, "five attempts"):
+                client.request("/graphql/", {"query": "test"})
+        self.assertEqual(request.call_count, 5)
+
     def test_http_errors_distinguish_challenge_csrf_and_auth_without_body_leaks(self):
         cases = [
             (403, b"<title>Just a moment...</title> SECRET", "browser security challenge"),

@@ -1,6 +1,7 @@
 """Archive every accepted LeetCode submission. Python standard library only."""
 
 import json
+from http.client import HTTPException
 import os
 from pathlib import Path
 import re
@@ -83,10 +84,12 @@ class Client:
                                     "browser-challenge marker. The response does not establish "
                                     "whether this is a session problem or runner blocking.") from None
                 raise SyncError(f"LeetCode request failed (HTTP {error.code}).") from None
-            except (URLError, TimeoutError):
+            except (URLError, TimeoutError, ConnectionError, HTTPException):
                 if attempt == 4:
-                    raise SyncError("LeetCode could not be reached after five attempts.") from None
-                time.sleep(10)
+                    raise SyncError("LeetCode connection failed after five attempts. "
+                                    "Saved submissions will resume on the next run.") from None
+                print(f"LeetCode connection interrupted; retrying ({attempt + 1}/4).", flush=True)
+                time.sleep(min(10 * 2 ** attempt, 60))
             except (ValueError, UnicodeError):
                 raise SyncError("LeetCode returned non-JSON data, possibly a login or challenge page.") from None
 
