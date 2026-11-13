@@ -34,6 +34,7 @@
     "longest-consecutive-sequence": 3,
     "longest-repeating-character-replacement": 3,
     "longest-substring-without-repeating-characters": 4,
+    "lru-cache": 1,
     "majority-element": 1,
     "majority-element-ii": 1,
     "maximum-depth-of-binary-tree": 1,
@@ -774,6 +775,11 @@
       "language": "python3",
       "path": "top-k-frequent-elements/submission-5.py",
       "timestamp": 1758590894
+    },
+    "2194821014": {
+      "language": "python3",
+      "path": "lru-cache/submission-0.py",
+      "timestamp": 1794506236
     },
     "865443004": {
       "language": "python3",
