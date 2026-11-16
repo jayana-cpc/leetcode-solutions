@@ -3,6 +3,7 @@
   "next_index": {
     "3sum": 3,
     "4sum": 3,
+    "add-two-numbers": 1,
     "baseball-game": 3,
     "best-time-to-buy-and-sell-stock": 3,
     "binary-search": 2,
@@ -26,12 +27,14 @@
     "happy-number": 1,
     "implement-stack-using-queues": 1,
     "insert-delete-getrandom-o1": 1,
+    "integer-to-roman": 5,
     "intersection-of-two-arrays": 1,
     "invert-binary-tree": 1,
     "koko-eating-bananas": 4,
     "linked-list-cycle": 4,
     "longest-common-prefix": 2,
     "longest-consecutive-sequence": 3,
+    "longest-palindromic-substring": 1,
     "longest-repeating-character-replacement": 3,
     "longest-substring-without-repeating-characters": 4,
     "lru-cache": 1,
@@ -43,6 +46,7 @@
     "middle-of-the-linked-list": 1,
     "minimum-positive-sum-subarray": 1,
     "minimum-size-subarray-sum": 2,
+    "palindrome-number": 1,
     "permutation-in-string": 7,
     "product-of-array-except-self": 3,
     "remove-duplicates-from-sorted-array": 3,
@@ -51,6 +55,7 @@
     "remove-linked-list-elements": 1,
     "remove-nth-node-from-end-of-list": 1,
     "reorder-list": 1,
+    "reverse-integer": 4,
     "reverse-linked-list": 3,
     "reverse-string": 1,
     "reverse-words-in-a-string": 1,
@@ -59,6 +64,7 @@
     "search-in-rotated-sorted-array": 1,
     "search-insert-position": 1,
     "sqrtx": 1,
+    "string-to-integer-atoi": 1,
     "subtree-of-another-tree": 2,
     "top-k-frequent-elements": 6,
     "two-sum": 6,
@@ -67,7 +73,8 @@
     "valid-palindrome": 2,
     "valid-palindrome-ii": 1,
     "valid-parentheses": 1,
-    "valid-sudoku": 2
+    "valid-sudoku": 2,
+    "zigzag-conversion": 3
   },
   "remaining": 0,
   "submissions": {
@@ -780,6 +787,86 @@
       "language": "python3",
       "path": "lru-cache/submission-0.py",
       "timestamp": 1794506236
+    },
+    "2196108826": {
+      "language": "python3",
+      "path": "add-two-numbers/submission-0.py",
+      "timestamp": 1794679144
+    },
+    "2196120125": {
+      "language": "python3",
+      "path": "longest-palindromic-substring/submission-0.py",
+      "timestamp": 1794680157
+    },
+    "2196127490": {
+      "language": "python3",
+      "path": "zigzag-conversion/submission-0.py",
+      "timestamp": 1794680842
+    },
+    "2196127998": {
+      "language": "python3",
+      "path": "zigzag-conversion/submission-1.py",
+      "timestamp": 1794680897
+    },
+    "2196131241": {
+      "language": "python3",
+      "path": "zigzag-conversion/submission-2.py",
+      "timestamp": 1794681241
+    },
+    "2196136784": {
+      "language": "python3",
+      "path": "reverse-integer/submission-0.py",
+      "timestamp": 1794681920
+    },
+    "2196137131": {
+      "language": "python3",
+      "path": "reverse-integer/submission-1.py",
+      "timestamp": 1794681963
+    },
+    "2196137252": {
+      "language": "python3",
+      "path": "reverse-integer/submission-2.py",
+      "timestamp": 1794681977
+    },
+    "2196137354": {
+      "language": "python3",
+      "path": "reverse-integer/submission-3.py",
+      "timestamp": 1794681989
+    },
+    "2196968680": {
+      "language": "python3",
+      "path": "palindrome-number/submission-0.py",
+      "timestamp": 1794794079
+    },
+    "2196970051": {
+      "language": "python3",
+      "path": "string-to-integer-atoi/submission-0.py",
+      "timestamp": 1794794349
+    },
+    "2196981630": {
+      "language": "python3",
+      "path": "integer-to-roman/submission-0.py",
+      "timestamp": 1794796553
+    },
+    "2196982055": {
+      "language": "python3",
+      "path": "integer-to-roman/submission-1.py",
+      "timestamp": 1794796633
+    },
+    "2196982333": {
+      "language": "python3",
+      "path": "integer-to-roman/submission-2.py",
+      "timestamp": 1794796684
+    },
+    "2196982764": {
+      "language": "python3",
+      "path": "integer-to-roman/submission-3.py",
+      "timestamp": 1794796771
+    },
+    "2196982897": {
+      "language": "python3",
+      "path": "integer-to-roman/submission-4.py",
+      "timestamp": 1794796796
     },
     "865443004": {
       "language": "python3",
