@@ -27,6 +27,9 @@ class FakeClient:
     def page(self, offset):
         return self.rows[offset:offset + 2], offset + 2 < len(self.rows)
 
+    def history(self):
+        yield from self.rows
+
     def detail(self, number):
         if number == self.fail:
             raise archive.SyncError("Temporary failure")
@@ -36,6 +39,24 @@ class FakeClient:
 
 
 class ArchiveTests(unittest.TestCase):
+    def test_graphql_history_paginates_questions_and_attempts(self):
+        client = archive.Client("fake", "fake")
+        questions = [{"titleSlug": f"problem-{i}"} for i in range(100)]
+        calls = []
+        def graphql(query, variables):
+            calls.append(variables)
+            if "filters" in variables:
+                return {"userProgressQuestionList": {"questions": questions if variables["filters"]["skip"] == 0 else []}}
+            offset = variables["offset"]
+            rows = [{"id": offset + 1, "timestamp": str(offset + 1), "lang": "python3", "statusDisplay": "Accepted"}]
+            return {"questionSubmissionList": {"hasNext": offset == 0, "submissions": rows}}
+        client.graphql = graphql
+        rows = list(client.history())
+        self.assertEqual(len(rows), 200)
+        self.assertEqual(rows[0]["status_display"], "Accepted")
+        self.assertEqual(calls[-1]["filters"]["skip"], 100)
+        self.assertEqual(calls[2]["offset"], 1)
+
     def test_interrupted_connection_retries_then_returns_response(self):
         for interruption in (RemoteDisconnected("closed"), IncompleteRead(b"partial"),
                              ConnectionResetError("reset")):
@@ -133,3 +154,4 @@ class ArchiveTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

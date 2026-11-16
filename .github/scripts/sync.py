@@ -105,11 +105,53 @@ class Client:
             raise SyncError("Not signed into LeetCode. Replace the session and CSRF secrets.")
         return status["username"]
 
-    def page(self, offset):
-        data = self.request(f"/api/submissions/?offset={offset}&limit=20")
-        if not isinstance(data.get("submissions_dump"), list) or "has_next" not in data:
-            raise SyncError("LeetCode submission history is unavailable; no progress was advanced.")
-        return data["submissions_dump"], data["has_next"]
+    def history(self):
+        """Use the signed-in progress and per-problem GraphQL APIs throughout."""
+        skip = 0
+        seen_slugs = set()
+        while True:
+            progress = self.graphql("""query userProgressQuestionList($filters: UserProgressQuestionListInput) {
+                userProgressQuestionList(filters: $filters) {
+                    questions { titleSlug }
+                }
+            }""", {"filters": {"questionStatus": "SOLVED", "skip": skip, "limit": 100}})
+            data = progress.get("userProgressQuestionList")
+            if not isinstance(data, dict) or not isinstance(data.get("questions"), list):
+                raise SyncError("LeetCode solved-problem list is unavailable.")
+            questions = data["questions"]
+            for question in questions:
+                slug = question["titleSlug"]
+                if slug in seen_slugs:
+                    raise SyncError("Solved-problem pagination repeated; refusing an incomplete scan.")
+                seen_slugs.add(slug)
+                yield from self.problem_history(slug)
+            if len(questions) < 100:
+                break
+            skip += len(questions)
+
+    def problem_history(self, slug):
+        offset = 0
+        previous = None
+        while True:
+            result = self.graphql("""query submissionList($offset: Int!, $limit: Int!, $questionSlug: String!) {
+                questionSubmissionList(offset: $offset, limit: $limit, questionSlug: $questionSlug) {
+                    hasNext
+                    submissions { id statusDisplay lang timestamp }
+                }
+            }""", {"offset": offset, "limit": 20, "questionSlug": slug})
+            page = result.get("questionSubmissionList")
+            if not isinstance(page, dict) or not isinstance(page.get("submissions"), list) or "hasNext" not in page:
+                raise SyncError("LeetCode per-problem submission history is unavailable.")
+            rows = page["submissions"]
+            ids = tuple(str(row["id"]) for row in rows)
+            if page["hasNext"] and (not rows or ids == previous):
+                raise SyncError("Submission pagination stalled; refusing an incomplete scan.")
+            for row in rows:
+                yield {**row, "status_display": row["statusDisplay"]}
+            if not page["hasNext"]:
+                break
+            previous = ids
+            offset += len(rows)
 
     def detail(self, submission_id):
         data = self.graphql("""query submissionDetails($submissionId: Int!) {
@@ -125,20 +167,9 @@ class Client:
 def collect(client):
     """Scan all pages, including rejected attempts; never rely on a recent-only feed."""
     accepted = {}
-    offset = 0
-    previous_page = None
-    while True:
-        rows, has_next = client.page(offset)
-        ids = tuple(str(row["id"]) for row in rows)
-        if has_next and (not rows or ids == previous_page):
-            raise SyncError("LeetCode pagination stalled; refusing an incomplete history scan.")
-        for row in rows:
-            if row.get("status_display") == "Accepted":
-                accepted[str(row["id"])] = row
-        if not has_next:
-            break
-        offset += len(rows)
-        previous_page = ids
+    for row in client.history():
+        if row.get("status_display") == "Accepted":
+            accepted[str(row["id"])] = row
     return sorted(accepted.values(), key=lambda row: (int(row["timestamp"]), int(row["id"])))
 
 
@@ -219,3 +250,4 @@ if __name__ == "__main__":
         # Do not log response bodies, headers, environment variables, or cookies.
         print(f"::error::{error}", file=sys.stderr)
         sys.exit(1)
+
