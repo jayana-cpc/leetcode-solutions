@@ -23,6 +23,7 @@
     "find-minimum-in-rotated-sorted-array": 4,
     "find-the-duplicate-number": 3,
     "find-the-index-of-the-first-occurrence-in-a-string": 3,
+    "generate-parentheses": 2,
     "group-anagrams": 8,
     "guess-number-higher-or-lower": 1,
     "happy-number": 1,
@@ -45,6 +46,7 @@
     "maximum-depth-of-binary-tree": 1,
     "merge-sorted-array": 1,
     "merge-strings-alternately": 2,
+    "merge-two-sorted-lists": 1,
     "middle-of-the-linked-list": 1,
     "minimum-positive-sum-subarray": 1,
     "minimum-size-subarray-sum": 2,
@@ -69,6 +71,7 @@
     "sqrtx": 1,
     "string-to-integer-atoi": 1,
     "subtree-of-another-tree": 2,
+    "swap-nodes-in-pairs": 2,
     "top-k-frequent-elements": 6,
     "two-sum": 6,
     "two-sum-ii-input-array-is-sorted": 1,
@@ -890,6 +893,31 @@
       "language": "python3",
       "path": "remove-nth-node-from-end-of-list/submission-1.py",
       "timestamp": 1794850930
+    },
+    "2198265486": {
+      "language": "python3",
+      "path": "merge-two-sorted-lists/submission-0.py",
+      "timestamp": 1794945148
+    },
+    "2198268943": {
+      "language": "python3",
+      "path": "generate-parentheses/submission-0.py",
+      "timestamp": 1794945666
+    },
+    "2198270115": {
+      "language": "python3",
+      "path": "generate-parentheses/submission-1.py",
+      "timestamp": 1794945849
+    },
+    "2198274868": {
+      "language": "python3",
+      "path": "swap-nodes-in-pairs/submission-0.py",
+      "timestamp": 1794946590
+    },
+    "2198277163": {
+      "language": "python3",
+      "path": "swap-nodes-in-pairs/submission-1.py",
+      "timestamp": 1794946997
     },
     "865443004": {
       "language": "python3",
