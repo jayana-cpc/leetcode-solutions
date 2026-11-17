@@ -2,6 +2,7 @@
   "history_import_complete": true,
   "next_index": {
     "3sum": 3,
+    "3sum-closest": 1,
     "4sum": 3,
     "add-two-numbers": 1,
     "baseball-game": 3,
@@ -31,6 +32,7 @@
     "intersection-of-two-arrays": 1,
     "invert-binary-tree": 1,
     "koko-eating-bananas": 4,
+    "letter-combinations-of-a-phone-number": 1,
     "linked-list-cycle": 4,
     "longest-common-prefix": 2,
     "longest-consecutive-sequence": 3,
@@ -53,12 +55,13 @@
     "remove-duplicates-from-sorted-array-ii": 1,
     "remove-element": 2,
     "remove-linked-list-elements": 1,
-    "remove-nth-node-from-end-of-list": 1,
+    "remove-nth-node-from-end-of-list": 2,
     "reorder-list": 1,
     "reverse-integer": 4,
     "reverse-linked-list": 3,
     "reverse-string": 1,
     "reverse-words-in-a-string": 1,
+    "roman-to-integer": 1,
     "rotate-array": 1,
     "search-a-2d-matrix": 7,
     "search-in-rotated-sorted-array": 1,
@@ -867,6 +870,26 @@
       "language": "python3",
       "path": "integer-to-roman/submission-4.py",
       "timestamp": 1794796796
+    },
+    "2197473294": {
+      "language": "python3",
+      "path": "roman-to-integer/submission-0.py",
+      "timestamp": 1794849007
+    },
+    "2197480601": {
+      "language": "python3",
+      "path": "3sum-closest/submission-0.py",
+      "timestamp": 1794849564
+    },
+    "2197486525": {
+      "language": "python3",
+      "path": "letter-combinations-of-a-phone-number/submission-0.py",
+      "timestamp": 1794850014
+    },
+    "2197498225": {
+      "language": "python3",
+      "path": "remove-nth-node-from-end-of-list/submission-1.py",
+      "timestamp": 1794850930
     },
     "865443004": {
       "language": "python3",
