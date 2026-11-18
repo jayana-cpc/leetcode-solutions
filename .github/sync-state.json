@@ -22,7 +22,7 @@
     "find-k-closest-elements": 3,
     "find-minimum-in-rotated-sorted-array": 4,
     "find-the-duplicate-number": 3,
-    "find-the-index-of-the-first-occurrence-in-a-string": 3,
+    "find-the-index-of-the-first-occurrence-in-a-string": 5,
     "generate-parentheses": 2,
     "group-anagrams": 8,
     "guess-number-higher-or-lower": 1,
@@ -53,9 +53,9 @@
     "palindrome-number": 1,
     "permutation-in-string": 7,
     "product-of-array-except-self": 3,
-    "remove-duplicates-from-sorted-array": 3,
+    "remove-duplicates-from-sorted-array": 5,
     "remove-duplicates-from-sorted-array-ii": 1,
-    "remove-element": 2,
+    "remove-element": 3,
     "remove-linked-list-elements": 1,
     "remove-nth-node-from-end-of-list": 2,
     "reorder-list": 1,
@@ -918,6 +918,31 @@
       "language": "python3",
       "path": "swap-nodes-in-pairs/submission-1.py",
       "timestamp": 1794946997
+    },
+    "2198901694": {
+      "language": "python3",
+      "path": "remove-duplicates-from-sorted-array/submission-3.py",
+      "timestamp": 1795026718
+    },
+    "2198903279": {
+      "language": "python3",
+      "path": "remove-duplicates-from-sorted-array/submission-4.py",
+      "timestamp": 1795026886
+    },
+    "2198916658": {
+      "language": "python3",
+      "path": "remove-element/submission-2.py",
+      "timestamp": 1795028479
+    },
+    "2198923502": {
+      "language": "python3",
+      "path": "find-the-index-of-the-first-occurrence-in-a-string/submission-3.py",
+      "timestamp": 1795029386
+    },
+    "2198924600": {
+      "language": "python3",
+      "path": "find-the-index-of-the-first-occurrence-in-a-string/submission-4.py",
+      "timestamp": 1795029532
     },
     "865443004": {
       "language": "python3",
