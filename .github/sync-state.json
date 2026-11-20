@@ -5,6 +5,7 @@
     "3sum-closest": 1,
     "4sum": 3,
     "add-two-numbers": 1,
+    "alien-dictionary": 1,
     "baseball-game": 3,
     "best-time-to-buy-and-sell-stock": 3,
     "binary-search": 2,
@@ -15,7 +16,8 @@
     "contains-duplicate-ii": 3,
     "copy-list-with-random-pointer": 2,
     "course-schedule-ii": 1,
-    "daily-temperatures": 1,
+    "daily-temperatures": 2,
+    "design-circular-queue": 1,
     "design-hashmap": 2,
     "design-hashset": 4,
     "diameter-of-binary-tree": 1,
@@ -52,8 +54,10 @@
     "middle-of-the-linked-list": 1,
     "minimum-positive-sum-subarray": 1,
     "minimum-size-subarray-sum": 2,
+    "next-greater-element-i": 1,
     "palindrome-number": 1,
     "permutation-in-string": 7,
+    "powx-n": 1,
     "product-of-array-except-self": 3,
     "remove-duplicates-from-sorted-array": 5,
     "remove-duplicates-from-sorted-array-ii": 1,
@@ -967,6 +971,31 @@
       "language": "python3",
       "path": "rotate-image/submission-0.py",
       "timestamp": 1795128127
+    },
+    "2200217329": {
+      "language": "python3",
+      "path": "daily-temperatures/submission-1.py",
+      "timestamp": 1795207254
+    },
+    "2200222964": {
+      "language": "python3",
+      "path": "next-greater-element-i/submission-0.py",
+      "timestamp": 1795208570
+    },
+    "2200232120": {
+      "language": "python3",
+      "path": "design-circular-queue/submission-0.py",
+      "timestamp": 1795210924
+    },
+    "2200234293": {
+      "language": "python3",
+      "path": "powx-n/submission-0.py",
+      "timestamp": 1795211508
+    },
+    "2200242005": {
+      "language": "python3",
+      "path": "alien-dictionary/submission-0.py",
+      "timestamp": 1795213692
     },
     "865443004": {
       "language": "python3",
